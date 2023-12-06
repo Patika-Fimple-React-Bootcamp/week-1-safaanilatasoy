@@ -3,23 +3,29 @@
 const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
 
 const loadingElement = document.getElementById("loading");
+let loadingTime = 800;
 const resultTable = document.querySelector(".table");
 resultTable.style.display = "none";
 loadingElement.style.display = "block";
 
-setTimeout(() => {
-  // Fetching Data
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      const dataList = document.getElementById("dataList");
+// GET DATA Func
+getData(loadingTime);
 
-      data.map((user) => {
-        loadingElement.style.display = "none";
-        resultTable.style.display = "block";
-        const tr = document.createElement("tr");
 
-        tr.innerHTML = `
+function getData(loadingTime) {
+  setTimeout(() => {
+    // Fetching Data
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const dataList = document.getElementById("dataList");
+
+        data.map((user) => {
+          loadingElement.style.display = "none";
+          resultTable.style.display = "block";
+          const tr = document.createElement("tr");
+
+          tr.innerHTML = `
                             <td scope="row">${user.id}</td>
                             <td>${user.title}</td>
                             <td>
@@ -31,10 +37,12 @@ setTimeout(() => {
                             </td>
                         `;
 
-        dataList.appendChild(tr);
+          dataList.appendChild(tr);
+        });
       });
-    });
-}, 800);
+  }, loadingTime);
+}
+
 
 // Settings Menu Display
 function toggleMenu() {
@@ -84,3 +92,4 @@ function submitForm() {
   // Form Cleaning
   document.getElementById("dataForm").reset();
 }
+

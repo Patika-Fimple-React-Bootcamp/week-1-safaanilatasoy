@@ -95,13 +95,27 @@
         </section>
 
     <section class="menuContainer" id="menu">
-    
+    <form id="settingsForm">
     <ul>
-      <li>Seçenek 1</li>
-      <li>Seçenek 2</li>
-      <li>Seçenek 3</li>
+        <li>
+            <label for="loadingTime">Loading Time
+                <input type="number" value="800">
+            </label>
+        </li>
+        <li>Option 2 </li>
+        <li>Option 3 </li>
+        <li>Option 4 </li>
+      <li>Theme Color: 
+        <input type="radio" id="radio1" name="themeColor" value="#ff9ff3">
+        <input type="radio" id="radio3" name="themeColor" value="3">
+        <input type="radio" id="radio4" name="themeColor" value="4">
+        <hr />
+      </li>
+      <li>
+        <button type="submit">Save</button>
+    </li>
     </ul>
-
+</form>
   </section>
         <!-- Settings Container End -->
 
