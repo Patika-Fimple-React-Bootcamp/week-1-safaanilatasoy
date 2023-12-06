@@ -1,16 +1,17 @@
-// todo: use session for save loading time variable
+
 // Data API URL
 const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
 
 const loadingElement = document.getElementById("loading");
-let loadingTime = sessionStorage.getItem("loadingTime");
 const resultTable = document.querySelector(".table");
+
+let loadingTime = sessionStorage.getItem("loadingTime");
+
 resultTable.style.display = "none";
 loadingElement.style.display = "block";
 
 // GET DATA Func
 getData(loadingTime);
-
 
 function getData(loadingTime) {
   setTimeout(() => {
@@ -85,12 +86,17 @@ function toggleMenu() {
   menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
+// settings form button
+function sendSettingsForm() {
+  const loadingTimeValue = document.getElementById("loadingTime").value;
+  sessionStorage.setItem("loadingTime", loadingTimeValue);
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var menu = document.getElementById("menu");
   menu.style.display = "none";
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const storedLoadingTime = sessionStorage.getItem("loadingTime");
@@ -100,11 +106,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-// senttings form button 
-function sendSettingsForm() {
-  const loadingTimeValue = document.getElementById("loadingTime").value;
-  sessionStorage.setItem("loadingTime", loadingTimeValue);
-  
-  
-}
