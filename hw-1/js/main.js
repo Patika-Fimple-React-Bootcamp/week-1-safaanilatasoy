@@ -58,7 +58,7 @@ function submitForm() {
   const dataList = document.getElementById("dataList");
   const row = dataList.insertRow();
 
-  // if title and is Checked both of them is full then push
+  // if title is full then push
   if (title !== "") {
     document.getElementById("alertText").innerHTML = "";
     // User ID, Title and Completed tables
