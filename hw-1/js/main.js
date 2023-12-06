@@ -1,9 +1,10 @@
-
+// todo: use session for save loading time variable
 // Data API URL
 const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
 
 const loadingElement = document.getElementById("loading");
 let loadingTime = 800;
+loadingTime= sessionStorage.getItem("loadingTimeValue");
 const resultTable = document.querySelector(".table");
 resultTable.style.display = "none";
 loadingElement.style.display = "block";
@@ -43,18 +44,6 @@ function getData(loadingTime) {
   }, loadingTime);
 }
 
-
-// Settings Menu Display
-function toggleMenu() {
-  var menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  var menu = document.getElementById("menu");
-  menu.style.display = "none";
-});
-
 function submitForm() {
   // Title input
   const title = document.getElementById("title").value;
@@ -93,3 +82,20 @@ function submitForm() {
   document.getElementById("dataForm").reset();
 }
 
+// Settings Menu Display
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var menu = document.getElementById("menu");
+  menu.style.display = "none";
+});
+
+
+function sendSettingsForm() {
+  const loadingTimeValue = document.getElementById("loadingTime").value;
+  sessionStorage.setItem("loadingTimeValue", loadingTimeValue);
+  
+}

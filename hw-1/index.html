@@ -99,7 +99,7 @@
     <ul>
         <li>
             <label for="loadingTime">Loading Time
-                <input type="number" value="800">
+                <input id="loadingTime" name="loadingTime" type="number" min="0" max="9999" value="800">
             </label>
         </li>
         <li>Option 2 </li>
@@ -112,7 +112,7 @@
         <hr />
       </li>
       <li>
-        <button type="submit">Save</button>
+        <button type="submit" onclick="sendSettingsForm()">Save</button>
     </li>
     </ul>
 </form>
