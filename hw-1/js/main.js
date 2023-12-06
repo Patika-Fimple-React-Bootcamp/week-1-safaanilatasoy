@@ -3,8 +3,7 @@
 const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
 
 const loadingElement = document.getElementById("loading");
-let loadingTime = 800;
-loadingTime= sessionStorage.getItem("loadingTimeValue");
+let loadingTime = sessionStorage.getItem("loadingTime");
 const resultTable = document.querySelector(".table");
 resultTable.style.display = "none";
 loadingElement.style.display = "block";
@@ -67,8 +66,6 @@ function submitForm() {
     cellID.innerHTML = dataList.rows.length;
 
     cellTitle.innerHTML = title;
-
-    //  TODO: Completed, uncompleted icons will be centered
     cellChecked.innerHTML = isCompleted
       ? '<i class="fa-solid fa-check" style="color: #3cbe19;"></i>'
       : '<i class="fa-solid fa-xmark" style="color: #cb1010;"></i>';
@@ -94,8 +91,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const storedLoadingTime = sessionStorage.getItem("loadingTime");
+  if (storedLoadingTime) {
+    const loadingTimeInput = document.getElementById("loadingTime");
+    loadingTimeInput.value = storedLoadingTime;
+  }
+});
+
+
+// senttings form button 
 function sendSettingsForm() {
   const loadingTimeValue = document.getElementById("loadingTime").value;
-  sessionStorage.setItem("loadingTimeValue", loadingTimeValue);
+  sessionStorage.setItem("loadingTime", loadingTimeValue);
+  
   
 }
