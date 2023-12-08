@@ -10,7 +10,7 @@ Week-1
 ![](hw-1/img/table.gif)
 ![](hw-1/img/settings.gif)
 ![](hw-1/img/mobile.gif)
-![](hw-1/img/mobiless.png)
+
 
 ### Links
 
@@ -40,9 +40,4 @@ In the future stages of the project, a real-world, useful to-do app can be devel
 - [Flatui](https://flatuicolors.com) - Thanks to this website, I can easily switch between color palettes and conveniently copy my favorite colors with just a single click. I highly recommend it!
 - [Github Pages](https://pages.github.com/) - I was able to easily take my project live by simply creating a repository, so I highly recommend it.
 
-## Author
 
-- LinkedIn - [@safaanilatasoy](https://www.linkedin.com/in/safaanilatasoy/)
-- Github - [@safaanilatasoy](https://github.com/safaanilatasoy)
-- Frontend Mentor - [@safaanilatasoy](https://www.frontendmentor.io/profile/safaanilatasoy)
-- HackerRank - [@safaanilatasoy](https://www.hackerrank.com/profile/safaanilatasoy)
