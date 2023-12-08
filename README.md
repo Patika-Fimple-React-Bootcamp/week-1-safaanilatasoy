@@ -6,8 +6,8 @@ Week-1
 
 ### Screenshot
 
-![](desktopss.png)
-![](mobiless.png)
+![](hw-1/img/desktopss.png)
+![](hw-1/img/mobiless.png)
 
 ### Links
 
